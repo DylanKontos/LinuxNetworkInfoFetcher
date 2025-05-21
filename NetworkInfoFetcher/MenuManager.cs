@@ -10,17 +10,27 @@ class MenuManager
     
     public void Menu()
     {
-        Console.WriteLine("------Menu------");
-        Console.WriteLine("Enter 1 to scan currently connected network");
+        Console.WriteLine("---------Menu----------");
+        Console.WriteLine("Enter 1 to scan active network");
+        Console.WriteLine("Enter 2 to fetch authentication/encrpytion of active network");
         Console.WriteLine("Enter 0 to exit");
-        Console.WriteLine("----------------");
         
         currentSelection = Console.ReadLine();
         
-        if (currentSelection == "1") // switch
+        if (currentSelection == "1") // SCAN
         {
             networkScanner = new NetworkScanner(); // Initialize the instance
             networkScanner.ScanConnectedNetwork();
+            Menu(); // Return to menu after scan
+            // ScanConnectedNetworkManager scanManager = new ScanConnectedNetworkManager();
+            // scanManager.ScanConnectedNetwork(); // Call instance method
+        }
+        
+        if (currentSelection == "2") // FETCH AUTH
+        {
+            networkScanner = new NetworkScanner(); // Initialize the instance
+            networkScanner.FetchActiveConnectionAuthentication();
+            Menu(); // Return to menu after scan
             // ScanConnectedNetworkManager scanManager = new ScanConnectedNetworkManager();
             // scanManager.ScanConnectedNetwork(); // Call instance method
         }
