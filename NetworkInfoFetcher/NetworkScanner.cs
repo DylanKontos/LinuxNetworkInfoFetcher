@@ -7,6 +7,7 @@ class NetworkScanner
         try 
         {
             Console.WriteLine("Connected Network Name: ");
+            Console.WriteLine("Scanning..... ");
         }
 	
         catch (Exception ex)

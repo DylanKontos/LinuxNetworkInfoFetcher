@@ -3,7 +3,7 @@ using System;
 
 // Aim of this program:
 // - Document + Display interaction between C# and Linux!
-
+//
 // Program Utilities:
 // - Fetch public authentication/encryption types from connected network using ncmli (easy)
 // - Fetch public authentication/encryption types from unconnected network using nmcli (medium)
@@ -11,8 +11,6 @@ using System;
 
 public class Program
 {
-
-
     // Main is static so "seperate to the public class Program". #Q1 How?
     // Therefore, to declare MenuManager menuManager here, at the class level
     // You'd need to create an instance of Program
