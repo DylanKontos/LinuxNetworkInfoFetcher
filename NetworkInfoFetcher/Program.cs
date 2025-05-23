@@ -1,14 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-// Aim of this program:
-// - Document + Display interaction between C# and Linux!
-//
-// Program Utilities:
-// - Fetch public authentication/encryption types from connected network using ncmli (easy)
-// - Fetch public authentication/encryption types from unconnected network using nmcli (medium)
-// - Fetch private/inner authentication/encryption types from unconnected network (hard)
-
 public class Program
 {
     // Main is static so "seperate to the public class Program". #Q1 How?
