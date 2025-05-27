@@ -5,11 +5,13 @@ class NetworkScanner
 {
     public string? activeNetwork { get; private set; }
     public string? BSSID { get; private set; }
-
-
-
-    private static NetworkScanner? _instance;
-    public static NetworkScanner Instance
+    
+    private static NetworkScanner? _instance; // stores a singleton instance of this class
+    // It's also static!
+    // null with ?, so it's initialized when needed
+    private NetworkScanner() { } // Private constructor to prevent external instantiation
+    
+    public static NetworkScanner Instance // public static method to get the _instance
     {
         get
         {
@@ -20,8 +22,6 @@ class NetworkScanner
             return _instance;
         }
     }
-    private NetworkScanner() { } // Private constructor to prevent external instantiation
-    
     
     public void ScanConnectedNetwork()
     {
@@ -47,8 +47,7 @@ class NetworkScanner
             {
                 activeNetwork = string.Join(" ", lines[1].Split().TakeWhile(word => !word.Contains("-")));  
             }
-
-
+            
             // activeNetwork = result.Split('\n')[0].Split(' ')[0].Trim();
             Console.WriteLine("activeNetwork: " + activeNetwork);
             // Console.WriteLine("Active Network Connection(s):\n" + result.Trim());
